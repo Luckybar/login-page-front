@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main</title>
+    <link href="css/main.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
+<body>
+    <div class="main-block">
+        <div class="header" id="myHeader">
+            <h2>My Task</h2>
+        </div>
+
+        <button id="showInsertPage" class="btn btn-success">Insert</button>
+        <button id="showUpdatePage" class="btn btn-info" onclick="chooseTask()">update</button>
+        <button type="button" id="Delete" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#DeleteDropDown">Delete</button>
+        <!-- Delete Alert Modal -->
+        <div class="modal fade" id="DeleteDropDown" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Delete</h5>
+                    </div>
+                    <div class="modal-body">
+                        確定刪除所有任務?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button id="DeleteChecked" type="button" class="btn btn-primary">確定</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div id="insertPage" style="display: none">
+                <div id="insertItem">
+                    <div class="input-group mb-3 insert-item">
+                        <input type="text" class="form-control m-input insert-content" placeholder="Task Content">
+                        <div class="input-group-append">
+                            <button id="removeRow" type="button" class="btn btn-danger">Remove</button>
+                        </div>
+                    </div>
+                </div>
+                <button onclick="addInsertItem()">Add</button>
+                <button onclick="submitInsertData()">Insert</button>
+                <button onclick="cancel()">Cancel</button>
+            </div>
+
+            <div id="updatePage" style="display: none">
+                <div id="updateItem"></div>
+                <button onclick="submitUpdateData()">Update</button>
+                <button onclick="cancel()">Cancel</button>
+            </div>
+
+            <table class="table table-striped" id="UserTask">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">EditDate</th>
+                    <th scope="col">Task</th>
+                    <th scope="col">Finished</th>
+                    <th scope="col">Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
